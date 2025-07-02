@@ -25,7 +25,7 @@ services:
   fpga_driver:
     image: ubuntu:20.04
     container_name: fpga_driver
-    privileged: true  # Pour accéder à /dev
+    privileged: true
     devices:
       - /dev/xdma0:/dev/xdma0
     volumes:
@@ -41,7 +41,7 @@ services:
     image: nicolargo/glances
     container_name: monitor
     ports:
-      - "61208:61208"  # Accès web via localhost:61208
+      - "61208:61208"
     pid: "host"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
